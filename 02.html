@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+   <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width , initial-scale=1">
+  <!-- 
+   增加这句后，可以看到浏览器的DevTools面板的模拟移动设备状态的变化
+  -->
+
+  <title>Welcome to myCTApp</title>
+ 
+<style>
+  *{
+    margin: 10px;
+    text-align: center;
+  }
+  header{
+    border: 3px solid green;
+    height: 10%;
+    font-size: 1em;
+
+  }
+  nav{
+    border: 3px solid green;
+    height: 10%;
+  }
+  main{
+    border: 3px solid green;
+    height: 70%;
+    font-size: 0.8em;  
+    position: relative;
+  }
+
+  #box{
+    position: absolute;
+    right: 0;
+    width: 100px;
+  }
+
+  footer{
+    border: 3px solid green;
+    height:10%;
+    font-size: 0.7em;
+  } 
+</style>
+</head> 
+<body style="background-image:url(/CS.jpg)">
+  <header>
+    <p id="book">
+     《现代电影赏析》
+    </p>
+   </header>
+  <nav>
+   <button>向前</button>
+   <button>向后</button>
+   <button>暂停</button>
+  </nav>
+ 
+
+   <main id="main">
+    <img src="1.jpg" id="box">
+	
+   </main>
+
+  <footer> 
+   
+	CopyRight from 鄢佳文 江西科技师范大学 2022--2025
+
+  </footer> 
+  
+ <script>
+  var UI = {};
+  UI.appWidth = window.innerWidth;
+  UI.appHeight = window.innerHeight; 
+  let baseFont = UI.appHeight /20;
+  //通过改变body对象的字体大小，这个属性可以影响其后代
+  document.body.style.fontSize = baseFont +"px";
+  //通过把body的高度设置为设备屏幕的高度，从而实现纵向全屏
+  //通过CSS对子对象百分比（纵向）的配合，从而达到我们响应式设计的目标
+  document.body.style.height = UI.appHeight - 62 + "px";
+ </script>
+ </body>
+</html>
